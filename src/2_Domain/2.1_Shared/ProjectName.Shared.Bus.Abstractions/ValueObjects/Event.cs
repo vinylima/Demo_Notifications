@@ -3,15 +3,35 @@ using System;
 
 using MediatR;
 
+using ProjectName.Shared.Bus.Abstractions.Enums;
+
 namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
-    public class Event : Message, INotification
+    public abstract class Event : INotification
     {
+        public Guid EventId { get; protected set; }
         public DateTime Time { get; private set; }
+        public EventType EventType { get;  private set; }
+        public Type ResourceName { get; protected set; }
 
-        protected Event()
+        #region Constructors
+
+        protected Event(EventType eventType)
         {
+            this.EventId = Guid.NewGuid();
             this.Time = DateTime.Now;
+            this.ResourceName = this.GetType();
+            this.EventType = eventType;
         }
+
+        protected Event(Guid eventId, EventType eventType)
+        {
+            this.EventId = eventId;
+            this.Time = DateTime.Now;
+            this.ResourceName = this.GetType();
+            this.EventType = eventType;
+        }
+
+        #endregion
     }
 }

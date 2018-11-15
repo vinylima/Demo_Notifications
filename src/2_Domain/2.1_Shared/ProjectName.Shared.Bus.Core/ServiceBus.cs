@@ -20,14 +20,7 @@ namespace ProjectName.Shared.Bus.Core
 
         public async Task PublishEvent<T>(T @event) where T : Event
         {
-            try
-            {
-                await this._mediator.Publish(@event);
-            }
-            catch(Exception e)
-            {
-
-            }
+            await this._mediator.Publish(@event);
         }
 
         public void Dispose()

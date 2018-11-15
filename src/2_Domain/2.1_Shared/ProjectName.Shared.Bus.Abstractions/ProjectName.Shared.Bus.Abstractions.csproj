@@ -8,8 +8,4 @@
     <ProjectReference Include="..\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
-
 </Project>
