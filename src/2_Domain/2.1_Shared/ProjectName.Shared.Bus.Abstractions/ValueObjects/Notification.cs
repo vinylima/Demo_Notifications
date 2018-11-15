@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace ProjectName.Shared.Kernel.Core.Notifications
+namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
     public class Notification : Event
     {

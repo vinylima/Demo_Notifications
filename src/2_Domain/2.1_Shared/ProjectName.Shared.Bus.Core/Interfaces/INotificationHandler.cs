@@ -3,7 +3,7 @@ using System;
 
 using MediatR;
 
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Core.Interfaces
 {

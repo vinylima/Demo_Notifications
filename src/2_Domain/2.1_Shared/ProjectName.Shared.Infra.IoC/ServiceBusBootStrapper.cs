@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ProjectName.Shared.Bus.Abstractions;
 using ProjectName.Shared.Bus.Core.Handlers;
 using ProjectName.Shared.Bus.Core.Store;
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Infra.IoC
 {

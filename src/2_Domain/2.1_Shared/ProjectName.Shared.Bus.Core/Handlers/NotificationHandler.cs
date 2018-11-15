@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using ProjectName.Shared.Bus.Core.Interfaces;
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Core.Handlers
 {

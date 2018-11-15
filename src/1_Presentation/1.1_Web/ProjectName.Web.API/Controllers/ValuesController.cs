@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 using ProjectName.Shared.Bus.Abstractions;
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace DemoRepository.Web.API.Controllers
 {

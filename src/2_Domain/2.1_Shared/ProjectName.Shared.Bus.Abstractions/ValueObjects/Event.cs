@@ -3,7 +3,7 @@ using System;
 
 using MediatR;
 
-namespace ProjectName.Shared.Kernel.Core.Notifications
+namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
     public class Event : Message, INotification
     {

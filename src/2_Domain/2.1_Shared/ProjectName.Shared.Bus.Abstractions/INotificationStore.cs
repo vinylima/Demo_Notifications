@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Abstractions
 {

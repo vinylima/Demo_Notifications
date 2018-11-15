@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 using ProjectName.Shared.Bus.Abstractions;
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Core.Store
 {

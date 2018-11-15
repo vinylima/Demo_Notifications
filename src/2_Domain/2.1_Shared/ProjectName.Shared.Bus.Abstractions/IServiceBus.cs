@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-using ProjectName.Shared.Kernel.Core.Notifications;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Abstractions
 {
