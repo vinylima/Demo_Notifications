@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Data.Abstractions\ProjectName.Shared.Data.Abstractions.csproj" />
-    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Domain.Abstractions\ProjectName.Shared.Domain.Abstractions.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Data\ProjectName.Shared.Abstractions.Data.csproj" />
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Domain\ProjectName.Shared.Abstractions.Domain.csproj" />
     <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Kernel.Core\ProjectName.Shared.Kernel.Core.csproj" />
     <ProjectReference Include="..\ProjectName.DomainName.Domain\ProjectName.DomainName.Domain.csproj" />
   </ItemGroup>

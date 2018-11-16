@@ -6,8 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using ProjectName.DomainName.Infra.Server.Data.Context;
 using ProjectName.DomainName.Infra.Server.Data.Repositories;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
-using ProjectName.Shared.Bus.Core;
-using ProjectName.Shared.Bus.Abstractions;
 
 namespace ProjectName.DomainName.Infra.Server.IoC
 {
@@ -21,22 +19,8 @@ namespace ProjectName.DomainName.Infra.Server.IoC
             {
                 op.UseSqlServer(config.GetConnectionString("ProjectName_Connection"));
             });
-
-            // Bus
-
-            services.AddScoped<IServiceBus, ServiceBus>();
-
-            // Handlers
-
-
-            // Notification Store
-
-
-            // Services
-
-            //services.AddScoped<IAddressService, AddressService>();
-
-            // Repository
+            
+            // Repositories
 
             services.AddScoped<IAddressRepository, AddressRepository>();
         }

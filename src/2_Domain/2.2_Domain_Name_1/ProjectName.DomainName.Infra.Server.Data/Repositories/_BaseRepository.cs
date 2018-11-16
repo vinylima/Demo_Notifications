@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 using ProjectName.DomainName.Infra.Server.Data.Context;
-using ProjectName.Shared.Data.Abstractions;
-using ProjectName.Shared.Domain;
-using ProjectName.Shared.Domain.Abstractions;
+using ProjectName.Shared.Abstractions.Data;
+using ProjectName.Shared.Abstractions.Domain;
 
 namespace ProjectName.DomainName.Infra.Server.Data.Repositories
 {

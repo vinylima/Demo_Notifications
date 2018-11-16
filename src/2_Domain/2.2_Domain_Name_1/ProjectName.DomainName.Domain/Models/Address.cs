@@ -2,7 +2,7 @@
 using System;
 
 using ProjectName.DomainName.Domain.ValueObjects;
-using ProjectName.Shared.Domain;
+using ProjectName.Shared.Abstractions.Domain;
 
 namespace ProjectName.DomainName.Domain.Models
 {
@@ -10,6 +10,8 @@ namespace ProjectName.DomainName.Domain.Models
     {
         public string Street { get; set; }
         public City City { get; set; }
+
+        #region Constructors
 
         public Address()
         {
@@ -35,10 +37,17 @@ namespace ProjectName.DomainName.Domain.Models
             };
         }
 
+        #endregion
+
         public override void CopyTo(Address address)
         {
             address.Street = this.Street;
             address.City = this.City;
+        }
+
+        protected internal void AssignCity(City city)
+        {
+            this.City = city;
         }
     }
 }

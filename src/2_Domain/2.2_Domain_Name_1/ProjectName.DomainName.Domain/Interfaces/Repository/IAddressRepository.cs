@@ -1,6 +1,6 @@
 ﻿
 using ProjectName.DomainName.Domain.Models;
-using ProjectName.Shared.Data.Abstractions;
+using ProjectName.Shared.Abstractions.Data;
 
 namespace ProjectName.DomainName.Domain.Interfaces.Repository
 {

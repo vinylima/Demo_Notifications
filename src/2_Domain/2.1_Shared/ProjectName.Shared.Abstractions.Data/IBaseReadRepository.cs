@@ -13,9 +13,9 @@ namespace ProjectName.Shared.Abstractions.Data
         bool Exists(Guid id);
 
         bool ExistsWithFind(Guid id);
-        
+
         Task<TModel> SearchByIdAsync(Guid id);
-        
+
         Task<IEnumerable<TModel>> GetAllAsync();
 
         Task<IEnumerable<TModel>> GetAllAsync(int pageIndex, int pageSize);

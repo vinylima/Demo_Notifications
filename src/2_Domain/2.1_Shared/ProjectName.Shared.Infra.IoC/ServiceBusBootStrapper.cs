@@ -5,9 +5,10 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 using ProjectName.Shared.Bus.Abstractions;
+using ProjectName.Shared.Bus.Abstractions.ValueObjects;
+using ProjectName.Shared.Bus.Core;
 using ProjectName.Shared.Bus.Core.Handlers;
 using ProjectName.Shared.Bus.Core.Store;
-using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Infra.IoC
 {
@@ -19,10 +20,16 @@ namespace ProjectName.Shared.Infra.IoC
             services.AddScoped<List<Warning>>();
             services.AddScoped<List<SystemError>>();
 
-            services.AddScoped<Bus.Core.Interfaces.INotificationHandler, NotificationHandler>();
+            // Add Service Bus Core Service
+            services.AddScoped<IServiceBus, ServiceBus>();
+
+            // Add Notification Store of Domain Notifications, Warnings and System Errors.
+            services.AddScoped<INotificationStore, NotificationStore>();
+
+            //services.AddScoped<Bus.Core.Interfaces.INotificationHandler, NotificationHandler>();
             services.AddScoped<INotificationHandler<Notification>, NotificationHandler>();
 
-            services.AddScoped<INotificationStore, NotificationStore>();
+            
         }
     }
 }

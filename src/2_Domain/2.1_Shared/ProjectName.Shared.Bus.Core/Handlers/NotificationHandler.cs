@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-using ProjectName.Shared.Bus.Core.Interfaces;
+using MediatR;
+
+using ProjectName.Shared.Bus.Abstractions.Enums;
 using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Core.Handlers
 {
-    public class NotificationHandler : INotificationHandler
+    public class NotificationHandler : INotificationHandler<Notification>
     {
         private readonly List<Notification> _notifications;
         private readonly List<Warning> _warnings;
@@ -25,7 +27,20 @@ namespace ProjectName.Shared.Bus.Core.Handlers
 
         public Task Handle(Notification notification, CancellationToken cancellationToken)
         {
-            this._notifications?.Add(notification);
+            switch (notification.NotificationType)
+            {
+                case NotificationType.Notification:
+                    this._notifications.Add(notification);
+                    break;
+
+                case NotificationType.Warning:
+                    this._warnings.Add(notification as Warning);
+                    break;
+
+                case NotificationType.SystemError:
+                    this._systemErros.Add(notification as SystemError);
+                    break;
+            }
 
             return Task.CompletedTask;
         }
