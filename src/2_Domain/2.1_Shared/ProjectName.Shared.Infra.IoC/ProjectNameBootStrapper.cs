@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ProjectName.Shared.Infra.IoC

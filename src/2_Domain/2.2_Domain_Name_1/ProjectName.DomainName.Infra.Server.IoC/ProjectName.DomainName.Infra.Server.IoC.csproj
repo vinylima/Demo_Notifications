@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Bus.Core\ProjectName.Shared.Bus.Core.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Application\ProjectName.DomainName.Application.csproj" />
+    <ProjectReference Include="..\ProjectName.DomainName.Handlers\ProjectName.DomainName.Handlers.csproj" />
     <ProjectReference Include="..\ProjectName.DomainName.Infra.Server.Data\ProjectName.DomainName.Infra.Server.Data.csproj" />
   </ItemGroup>
 

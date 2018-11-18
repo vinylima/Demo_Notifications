@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+using ProjectName.Shared.Abstractions.Application;
 
 namespace ProjectName.DomainName.Application.ViewModels
 {
-    public class AddressViewModel
+    public class AddressViewModel : BaseViewModel<AddressViewModel>, IViewModel
     {
-        public string Street { get; protected set; }
+        public string Street { get; set; }
     }
 }

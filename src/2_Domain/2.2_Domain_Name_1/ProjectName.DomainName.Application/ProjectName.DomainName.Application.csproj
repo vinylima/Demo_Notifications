@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.1_Shared\ProjectName.Shared.Abstractions.Application\ProjectName.Shared.Abstractions.Application.csproj" />
+  </ItemGroup>
+
 </Project>

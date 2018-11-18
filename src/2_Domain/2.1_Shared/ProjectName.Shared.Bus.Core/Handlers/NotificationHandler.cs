@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-using MediatR;
-
+using ProjectName.Shared.Bus.Abstractions;
 using ProjectName.Shared.Bus.Abstractions.Enums;
 using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Shared.Bus.Core.Handlers
 {
-    public class NotificationHandler : INotificationHandler<Notification>
+    public class NotificationHandler : IEventHandler<Notification>
     {
         private readonly List<Notification> _notifications;
         private readonly List<Warning> _warnings;
