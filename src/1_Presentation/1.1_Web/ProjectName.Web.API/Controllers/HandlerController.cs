@@ -22,6 +22,7 @@ namespace ProjectName.Web.API.Controllers
         }
 
         [HttpGet]
+        [Route("api/Handler")]
         public async Task<IActionResult> Index()
         {
             var addresses = await this._addressReadRepository.GetAllAsync();
@@ -31,7 +32,7 @@ namespace ProjectName.Web.API.Controllers
 
         // POST api/Service/Save
         [HttpPost]
-        [Route("api/[controller]/Save")]
+        [Route("api/Handler/Save")]
         public IActionResult Save([FromBody] SaveAddressCommand addressViewModel)
         {
             this.ServiceBus.SendCommand(addressViewModel);
@@ -41,14 +42,12 @@ namespace ProjectName.Web.API.Controllers
 
 
         [HttpGet]
-        [Route("api/[controller]/Search")]
-        IActionResult Search(Guid addresId)
+        [Route("api/Handler/Search")]
+        public async Task<IActionResult> Search(Guid addressId)
         {
-            var cmd = new SearchAddressCommand(addresId);
+            var addressViewModel = await this.ServiceBus.SendCommand(new SearchAddressCommand(addressId));
 
-            var response = this.ServiceBus.SendCommand(cmd);
-
-            return Response();
+            return Response(addressViewModel);
         }
     }
 }

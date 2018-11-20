@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
 using ProjectName.DomainName.Application.ViewModels;
@@ -17,7 +16,8 @@ namespace ProjectName.Web.API.Controllers
         }
 
         [HttpGet]
-        [Route("api/[controller]")]
+        [Route("api/Service/Index")]
+        [Route("api/Service")]
         public IActionResult Index()
         {
             base.ServiceBus.PublishEvent(new Notification("Key", "Value!!!"));

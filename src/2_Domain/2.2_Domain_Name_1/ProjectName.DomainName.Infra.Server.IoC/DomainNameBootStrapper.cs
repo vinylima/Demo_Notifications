@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using MediatR;
 
 using ProjectName.DomainName.Application.Commands.AddressCommands;
+using ProjectName.DomainName.Application.ViewModels;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
 using ProjectName.DomainName.Handlers.Addresses;
 using ProjectName.DomainName.Infra.Server.Data.Context;
@@ -34,6 +35,7 @@ namespace ProjectName.DomainName.Infra.Server.IoC
             // Handlers
 
             services.AddScoped<IRequestHandler<SaveAddressCommand, bool>, SaveAddressCommandHandler>();
+            services.AddScoped<IRequestHandler<SearchAddressCommand, AddressViewModel>, SearchAddressCommandHandler>();
         }
     }
 }
