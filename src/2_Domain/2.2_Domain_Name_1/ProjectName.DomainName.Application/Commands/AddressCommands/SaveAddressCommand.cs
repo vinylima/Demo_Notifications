@@ -1,5 +1,5 @@
 ﻿
-namespace ProjectName.DomainName.Application.Commands
+namespace ProjectName.DomainName.Application.Commands.AddressCommands
 {
     public class SaveAddressCommand : AddressCommand
     {

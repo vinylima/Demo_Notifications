@@ -5,7 +5,7 @@ using MediatR;
 
 namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
-    public abstract class Command : IRequest<bool>
+    public abstract class Command : ICommand
     {
         public Guid CommandId { get; private set; }
         public Guid AggregateId { get; protected set; }
@@ -26,7 +26,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
         }
     }
 
-    public abstract class Command<TResponse> : IRequest<TResponse>
+    public abstract class Command<TResponse> : ICommand<TResponse>
     {
         public Guid CommandId { get; private set; }
         public Guid AggregateId { get; private set; }

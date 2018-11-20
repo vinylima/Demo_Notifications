@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-using ProjectName.DomainName.Application.Commands;
+using ProjectName.DomainName.Application.Commands.AddressCommands;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
 using ProjectName.DomainName.Domain.Models;
 using ProjectName.DomainName.Domain.ValueObjects;

@@ -1,13 +1,11 @@
 ﻿
 using System;
 
-using MediatR;
-
 using ProjectName.Shared.Bus.Abstractions.Enums;
 
 namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
 {
-    public abstract class Event : INotification
+    public abstract class Event : IEvent
     {
         public Guid EventId { get; protected set; }
         public DateTime Time { get; private set; }

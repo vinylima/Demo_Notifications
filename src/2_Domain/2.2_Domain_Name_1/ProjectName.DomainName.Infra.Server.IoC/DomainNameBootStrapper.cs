@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 using MediatR;
 
-using ProjectName.DomainName.Application.Commands;
+using ProjectName.DomainName.Application.Commands.AddressCommands;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
 using ProjectName.DomainName.Handlers.Addresses;
 using ProjectName.DomainName.Infra.Server.Data.Context;

@@ -12,25 +12,23 @@ namespace ProjectName.Shared.Bus.Core
     public class ServiceBus : IServiceBus
     {
         private readonly IMediator _mediator;
-        private Guid id;
 
         public ServiceBus(IMediator mediator)
         {
             this._mediator = mediator;
-            this.id = Guid.NewGuid();
         }
 
-        public async Task PublishEvent<T>(T @event) where T : Event
+        public async Task PublishEvent(IEvent @event)
         {
             await this._mediator.Publish(@event);
         }
         
-        public async Task SendCommand<T>(T command) where T : Command
+        public async Task SendCommand(ICommand command)
         {
             await this._mediator.Send(command);
         }
 
-        public async Task<TResponse> SendCommand<T, TResponse>(T command) where T : Command<TResponse>
+        public async Task<TResponse> SendCommand<TResponse>(ICommand<TResponse> command)
         {
             TResponse response = await this._mediator.Send(command);
             

@@ -4,9 +4,10 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
 
-using ProjectName.DomainName.Application.Commands;
+using ProjectName.DomainName.Application.Commands.AddressCommands;
 using ProjectName.DomainName.Application.ViewModels;
 using ProjectName.DomainName.Domain.Interfaces.Repository;
+using ProjectName.Shared.Bus.Abstractions;
 
 namespace ProjectName.Web.API.Controllers
 {
@@ -43,7 +44,10 @@ namespace ProjectName.Web.API.Controllers
         [Route("api/[controller]/Search")]
         IActionResult Search(Guid addresId)
         {
-            
+            var cmd = new SearchAddressCommand(addresId);
+
+            var response = this.ServiceBus.SendCommand(cmd);
+
             return Response();
         }
     }

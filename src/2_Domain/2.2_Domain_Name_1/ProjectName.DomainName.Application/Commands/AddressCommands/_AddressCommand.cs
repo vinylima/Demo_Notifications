@@ -1,7 +1,7 @@
 ﻿
 using ProjectName.DomainName.Application.ViewModels;
 
-namespace ProjectName.DomainName.Application.Commands
+namespace ProjectName.DomainName.Application.Commands.AddressCommands
 {
     public class AddressCommand : AddressViewModel
     {
