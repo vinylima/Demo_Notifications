@@ -13,10 +13,10 @@ namespace ProjectName.Web.API.Controllers
         protected readonly IServiceBus ServiceBus;
         protected readonly INotificationStore NotificationStore;
 
-        public BaseController(IServiceBus serviceBus, INotificationStore notificationStore)
+        public BaseController(IServiceProvider serviceProvider)
         {
-            this.ServiceBus = serviceBus;
-            this.NotificationStore = notificationStore;
+            this.ServiceBus = serviceProvider.GetService<IServiceBus>();
+            this.NotificationStore = serviceProvider.GetService<INotificationStore>();
         }
 
         protected virtual bool ResultIsValid(bool includeNotifications = true, bool includeWarnings = false,

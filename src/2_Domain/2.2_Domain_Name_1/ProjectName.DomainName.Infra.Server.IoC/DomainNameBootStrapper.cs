@@ -28,8 +28,9 @@ namespace ProjectName.DomainName.Infra.Server.IoC
             // Repositories
 
             services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IAddressReadRepository, AddressRepository>();
 
-            
+
             // Handlers
 
             services.AddScoped<IRequestHandler<SaveAddressCommand, bool>, SaveAddressCommandHandler>();

@@ -28,6 +28,13 @@ namespace ProjectName.DomainName.Domain.Models
             };
         }
 
+        public Address(Guid id, string street, City city)
+        {
+            this.Id = id;
+            this.Street = street;
+            this.AssignCity(city);
+        }
+
         public Address(string street, string city)
         {
             this.Street = street;
@@ -35,6 +42,12 @@ namespace ProjectName.DomainName.Domain.Models
             {
                 Name = city
             };
+        }
+
+        public Address(string street, City city)
+        {
+            this.Street = street;
+            this.AssignCity(city);
         }
 
         #endregion

@@ -50,7 +50,6 @@ namespace ProjectName.DomainName.Infra.Server.Data.Repositories
                 saved = false;
             }
             
-
             return saved;
         }
 

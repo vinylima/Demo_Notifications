@@ -3,19 +3,17 @@ using System;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.DomainName.Application.Commands;
 using ProjectName.DomainName.Application.ViewModels;
-using ProjectName.Shared.Bus.Abstractions;
 using ProjectName.Shared.Bus.Abstractions.ValueObjects;
 
 namespace ProjectName.Web.API.Controllers
 {
     public class ServiceController : BaseController
     {
-        public ServiceController(IServiceBus serviceBus, INotificationStore notificationStore, IServiceProvider serviceProvider)
-            : base(serviceBus, notificationStore)
+        public ServiceController(IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
-            var bus = serviceProvider.GetService(typeof(IServiceBus));
+            
         }
 
         [HttpGet]
@@ -27,12 +25,12 @@ namespace ProjectName.Web.API.Controllers
             return Response();
         }
 
-        // GET api/Service/Save
+        // POST api/Service/Save
         [HttpPost]
         [Route("api/[controller]/Save")]
-        public IActionResult Save([FromBody] SaveAddressCommand addressViewModel)
+        public IActionResult Save([FromBody] AddressViewModel addressViewModel)
         {
-            this.ServiceBus.SendCommand(addressViewModel);
+            
             
             return Response();
         }

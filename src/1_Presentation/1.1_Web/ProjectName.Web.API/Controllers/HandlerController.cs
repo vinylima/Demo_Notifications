@@ -1,28 +1,50 @@
 ﻿
+using System;
+using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 
-using ProjectName.Shared.Bus.Abstractions;
+using ProjectName.DomainName.Application.Commands;
+using ProjectName.DomainName.Application.ViewModels;
+using ProjectName.DomainName.Domain.Interfaces.Repository;
 
 namespace ProjectName.Web.API.Controllers
 {
     public class HandlerController : BaseController
     {
-        public HandlerController(IServiceBus serviceBus, INotificationStore notificationStore)
-            : base(serviceBus, notificationStore)
-        {
+        private readonly IAddressReadRepository _addressReadRepository;
 
+        public HandlerController(IServiceProvider serviceProvider)
+            : base(serviceProvider)
+        {
+            this._addressReadRepository = serviceProvider.GetService<IAddressReadRepository>();
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return Ok();
+            var addresses = await this._addressReadRepository.GetAllAsync();
+
+            return Response(addresses);
         }
 
+        // POST api/Service/Save
         [HttpPost]
-        public IActionResult Save()
+        [Route("api/[controller]/Save")]
+        public IActionResult Save([FromBody] SaveAddressCommand addressViewModel)
         {
-            return Ok();
+            this.ServiceBus.SendCommand(addressViewModel);
+
+            return Response();
+        }
+
+
+        [HttpGet]
+        [Route("api/[controller]/Search")]
+        IActionResult Search(Guid addresId)
+        {
+            
+            return Response();
         }
     }
 }

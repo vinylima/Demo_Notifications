@@ -8,7 +8,7 @@ namespace ProjectName.Shared.Bus.Abstractions.ValueObjects
     public abstract class Command : IRequest<bool>
     {
         public Guid CommandId { get; private set; }
-        public Guid AggregateId { get; private set; }
+        public Guid AggregateId { get; protected set; }
         public DateTime Time { get; private set; }
         public Type ResourceName { get; private set; }
 
